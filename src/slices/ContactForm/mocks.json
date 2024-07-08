@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "southern",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Diagram"
+						}
+					}
+				]
+			},
+			"subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Veniam Lorem anim dolore deserunt est laborum amet consectetur ad deserunt minim enim fugiat pariatur irure. Laboris incididunt nulla tempor adipisicing eu consectetur mollit tempor dolor commodo."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,100 @@
+{
+  "id": "article",
+  "label": "Article",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": "URL slug for the article"
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "Title of the article",
+          "allowTargetBlank": false,
+          "single": "heading1"
+        }
+      },
+      "published_date": {
+        "type": "Date",
+        "config": {
+          "label": "Published Date",
+          "placeholder": ""
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {
+            "width": 2000,
+            "height": 1500
+          },
+          "thumbnails": []
+        }
+      },
+      "categories": {
+        "type": "Group",
+        "config": {
+          "label": "Categories",
+          "repeat": true,
+          "fields": {
+            "category": {
+              "type": "Link",
+              "config": {
+                "label": "Category",
+                "select": "document",
+                "customtypes": ["article_category"]
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "rich_text": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": {
+            "width": 2400,
+            "height": 1260
+          },
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}
