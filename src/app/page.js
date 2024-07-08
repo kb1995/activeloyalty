@@ -1,44 +1,39 @@
-import * as prismic from "@prismicio/client";
+import { SliceZone } from "@prismicio/react"
+import { notFound } from "next/navigation"
 
-import { createClient } from "@/prismicio";
-import { Layout } from "@/components/Layout";
-import { Bounded } from "@/components/Bounded";
-import { Article } from "@/components/Article";
+import { createClient } from "@/prismicio"
+import { components } from "@/slices"
+import { Layout } from "@/components/Layout"
 
 export async function generateMetadata() {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
+  const client = createClient()
+  const page = await client.getByUID("page", "home").catch(() => notFound())
 
   return {
-    title: prismic.asText(settings.data.name),
-  };
+    title: `${page.data.seo_title} | Active Loyalty`,
+    description: page.data.seo_description,
+    openGraph: {
+      title: page.data.seo_social_title,
+      description: page.data.seo_social_description,
+      images: [
+        {
+          url: page.data.seo_image.url,
+        },
+      ],
+    },
+  }
 }
 
-export default async function Index() {
-  const client = createClient();
+export default async function Page() {
+  const client = createClient()
 
-  const articles = await client.getAllByType("article", {
-    orderings: [
-      { field: "my.article.publishDate", direction: "desc" },
-      { field: "document.first_publication_date", direction: "desc" },
-    ],
-  });
-  const navigation = await client.getSingle("navigation");
-  const settings = await client.getSingle("settings");
+  const page = await client.getByUID("page", "home").catch(() => notFound())
+
+  const settings = await client.getSingle("settings")
 
   return (
-    <Layout
-      withHeaderDivider={false}
-      navigation={navigation}
-      settings={settings}
-    >
-      <Bounded size="widest">
-        <ul className="grid grid-cols-1 gap-16">
-          {articles.map((article) => (
-            <Article key={article.id} article={article} />
-          ))}
-        </ul>
-      </Bounded>
+    <Layout settings={settings}>
+      <SliceZone slices={page.data.slices} components={components} />
     </Layout>
-  );
+  )
 }

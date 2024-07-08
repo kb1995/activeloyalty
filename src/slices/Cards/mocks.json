@@ -81,6 +81,14 @@
 										}
 									]
 								}
+							],
+							[
+								"theme",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Orange",
+									"type": "Select"
+								}
 							]
 						]
 					}

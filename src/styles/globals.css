@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-eyebrow {
+  @apply text-base leading-tight uppercase font-semibold tracking-[0.06em];
+}
+
+.text-medium {
+  @apply text-[18px] leading-[22.5px] font-normal;
+}
+
+.text-large {
+  @apply text-[24px] leading-[30px] font-medium;
+}
+
+.text-2xl {
+  @apply text-[48px] leading-[52px] font-semibold;
+}
+
+.text-3xl {
+  @apply text-[64px] leading-[64px] font-semibold;
+}
+
+.text-4xl {
+  @apply text-[72px] leading-[64px] font-semibold;
+}

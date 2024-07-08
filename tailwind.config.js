@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,11 +9,24 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-      serif:
-        'var(--libre-baskerville), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+      sans: ["tt-commons-pro", ...defaultTheme.fontFamily.sans],
+    },
+    colors: {
+      white: "#FFF",
+      black: "#25312F",
+      transparent: "transparent",
+      //
+      neutral: "#FAFAFA",
+      forest: { DEFAULT: "#4D887D", dark: "#2F5E53", pale: "#A3C1BB" },
+      latte: "#F1E9D0",
+      "brown-sugar": "#D89463",
+      emerald: "#294740",
     },
     extend: {},
   },
-  plugins: [require("@tailwindcss/aspect-ratio")],
-};
+  plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+  ],
+}

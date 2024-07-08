@@ -27,6 +27,20 @@
             "label": "Cards",
             "repeat": true,
             "fields": {
+              "theme": {
+                "type": "Select",
+                "config": {
+                  "label": "Theme",
+                  "placeholder": "",
+                  "options": [
+                    "Beige",
+                    "Green",
+                    "Light Green",
+                    "Orange"
+                  ],
+                  "default_value": "Beige"
+                }
+              },
               "image": {
                 "type": "Image",
                 "config": {

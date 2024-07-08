@@ -6,51 +6,28 @@
   "status": true,
   "json": {
     "Main": {
-      "name": {
-        "type": "StructuredText",
+      "linkedin_url": {
+        "type": "Link",
         "config": {
-          "label": "Name",
-          "placeholder": "Name of your blog (e.g. your name)",
-          "allowTargetBlank": false,
-          "single": "heading1"
+          "label": "Linkedin URL",
+          "placeholder": "",
+          "select": null
         }
       },
-      "description": {
-        "type": "StructuredText",
+      "twitter_url": {
+        "type": "Link",
         "config": {
-          "label": "Description",
-          "placeholder": "Short description of your blog",
-          "allowTargetBlank": false,
-          "single": "paragraph"
+          "label": "Twitter URL",
+          "placeholder": "",
+          "select": null
         }
       },
-      "profilePicture": {
-        "type": "Image",
+      "youtube_url": {
+        "type": "Link",
         "config": {
-          "label": "Profile Picture",
-          "constraint": {
-            "width": 2000,
-            "height": 2000
-          },
-          "thumbnails": []
-        }
-      },
-      "newsletterDescription": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Newsletter Description",
-          "placeholder": "Text above the sign up form",
-          "allowTargetBlank": true,
-          "multi": "heading1,paragraph,strong,em,hyperlink,list-item,o-list-item"
-        }
-      },
-      "newsletterDisclaimer": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Newsletter Disclaimer",
-          "placeholder": "Small text below sign up form",
-          "allowTargetBlank": true,
-          "multi": "paragraph,em,strong,hyperlink"
+          "label": "Youtube URL",
+          "placeholder": "",
+          "select": null
         }
       }
     }

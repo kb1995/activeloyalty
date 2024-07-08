@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
-    "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
+    "dev": "next dev",
     "next:dev": "next",
     "build": "next build",
     "start": "next start",
@@ -18,6 +18,7 @@
     "@prismicio/client": "^7.6.0",
     "@prismicio/next": "^1.6.0",
     "@prismicio/react": "^2.8.0",
+    "classnames": "^2.5.1",
     "clsx": "^2.0.0",
     "next": "^14.0.1",
     "react": "^18.2.0",
@@ -26,6 +27,8 @@
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.42",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
     "@types/react": "18.2.33",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",

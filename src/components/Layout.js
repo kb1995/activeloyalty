@@ -2,7 +2,6 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 
 export function Layout({
-  navigation,
   settings,
   withHeaderDivider,
   withProfile,
@@ -14,7 +13,6 @@ export function Layout({
       <Header
         withProfile={withProfile}
         withDivider={withHeaderDivider}
-        navigation={navigation}
         settings={settings}
       />
       <main>{children}</main>
