@@ -8,12 +8,8 @@ import { Container } from "@/components/Container"
 import Subscribe from "../Subscribe"
 import Badge from "@/components/Badge"
 import { Article } from "@/components/Article"
-
-const dateFormatter = new Intl.DateTimeFormat("en-US", {
-  month: "short",
-  day: "numeric",
-  year: "numeric",
-})
+import { notFound } from "next/navigation"
+import formatDate from "@/lib/formatDate"
 
 export async function generateMetadata({ params }) {
   const client = createClient()
@@ -93,13 +89,18 @@ export default async function Page({ params }) {
 
   const article = await client.getByUID("article", params.uid).catch(() => notFound())
 
-  const latestArticles = await client.getAllByType("article", {
-    limit: 3,
-    orderings: [
-      { field: "my.article.published_date", direction: "desc" },
-      { field: "document.first_publication_date", direction: "desc" },
-    ],
-  })
+  let latestArticles = []
+  await client
+    .getAllByType("article", {
+      limit: 3,
+      orderings: [
+        { field: "my.article.published_date", direction: "desc" },
+        { field: "document.first_publication_date", direction: "desc" },
+      ],
+    })
+    .then(function (response) {
+      latestArticles = response.filter((post) => post.uid !== article.uid)
+    })
 
   const settings = await client.getSingle("settings")
 
@@ -115,7 +116,7 @@ export default async function Page({ params }) {
                 return <Badge>{item.category.uid}</Badge>
               })}
             </div>
-            <p className="text-sm font-medium text-gray">{dateFormatter.format(date)}</p>
+            <p className="text-sm font-medium text-gray">{formatDate(date)}</p>
           </div>
           <h1 className="text-al-2xl max-w-4xl">{article.data.title}</h1>
           <img
@@ -147,7 +148,7 @@ export default async function Page({ params }) {
           <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
             <div className="w-full">
               <div className="flex mb-14 justify-between items-center">
-                <h2 className="text-al-2xl">Related resources</h2>
+                <h2 className="text-al-2xl">Latest resources</h2>
                 <Link
                   href="/resources/"
                   className="flex items-center gap-2 text-gray text-al-medium font-semibold"

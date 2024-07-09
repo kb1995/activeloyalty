@@ -99,6 +99,7 @@ const ContactForm = ({ slice }) => {
           <form onSubmit={(e) => handleSubmit(e)} className="mt-12 grid grid-cols-1 gap-6">
             <div className="grid md:grid-cols-2 gap-6">
               <input
+                required
                 value={formData.first_name}
                 onChange={(e) =>
                   setFormData({
@@ -112,6 +113,7 @@ const ContactForm = ({ slice }) => {
                 className="rounded-[10px] placeholder:text-[#B6B6B6] text-lg"
               />
               <input
+                required
                 value={formData.last_name}
                 onChange={(e) =>
                   setFormData({
@@ -126,6 +128,7 @@ const ContactForm = ({ slice }) => {
               />
             </div>
             <input
+              required
               value={formData.company}
               onChange={(e) =>
                 setFormData({
@@ -140,6 +143,7 @@ const ContactForm = ({ slice }) => {
             />
             <div className="grid md:grid-cols-2 gap-6">
               <input
+                required
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({

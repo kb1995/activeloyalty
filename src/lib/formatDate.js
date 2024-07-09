@@ -1,9 +1,9 @@
 import { asDate } from "@prismicio/client"
 
 const formatDate = (date) => {
-  return asDate(date)?.toLocaleString("en-US", {
+  return asDate(date)?.toLocaleString("en-GB", {
     day: "2-digit",
-    month: "long",
+    month: "short",
     year: "numeric",
   })
 }

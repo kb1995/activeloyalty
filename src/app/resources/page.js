@@ -1,11 +1,8 @@
-import * as prismic from "@prismicio/client"
-
 import { createClient } from "@/prismicio"
 import { Layout } from "@/components/Layout"
 import { Container } from "@/components/Container"
-import { Article } from "@/components/Article"
-import Badge from "@/components/Badge"
 import Subscribe from "./Subscribe"
+import ContentGrid from "./ContentGrid"
 
 export async function generateMetadata() {
   const client = createClient()
@@ -69,25 +66,7 @@ export default async function Index() {
               />
             </div>
           </div>
-          <div className="flex md:justify-end mt-8 relative z-20">
-            <div>
-              <h2 className="text-al-eyebrow-small text-gray mb-4">Explore topics</h2>
-              <div className="flex items-center gap-2.5 relative z-20">
-                {categories.map((item) => {
-                  return (
-                    <button className="bg-latte-pale text-al-eyebrow-small hover:text-latte hover:bg-emerald duration-150 rounded-full px-4 py-2 uppercase text-emerald border border-emerald font-semibold">
-                      {item.uid}
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
-          <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10 mb-12 md:mb-40">
-            {articles.map((article) => (
-              <Article key={article.id} article={article} />
-            ))}
-          </ul>
+          <ContentGrid categories={categories} articles={articles} />
         </Container>
       </Layout>
     </div>

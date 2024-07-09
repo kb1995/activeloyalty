@@ -1,4 +1,3 @@
-import * as prismic from "@prismicio/client"
 import { SliceZone } from "@prismicio/react"
 import { notFound } from "next/navigation"
 

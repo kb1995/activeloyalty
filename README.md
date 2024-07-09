@@ -8,6 +8,6 @@
 [x] forward slash
 [] og image
 [] favicon
-[] resource filter
-[] related articles excluding current article
+[x] resource filter
+[x] related articles excluding current article
 [x] homepage hero image
