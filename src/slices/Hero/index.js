@@ -14,10 +14,12 @@ const Hero = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Container className="text-center mt-24" size="lg">
-        <h1 className="text-4xl mb-10">{asText(slice.primary.title)}</h1>
-        <p className="text-large max-w-2xl mx-auto">{asText(slice.primary.subtitle)}</p>
-        <div className="mt-8 flex justify-center items-center gap-3">
+      <Container className="text-center mt-12 md:mt-24" size="lg">
+        <h1 className="text-al-4xl">{asText(slice.primary.title)}</h1>
+        <p className="text-al-large mt-4 md:mt-10 max-w-2xl mx-auto">
+          {asText(slice.primary.subtitle)}
+        </p>
+        <div className="mt-4 md:mt-8 flex justify-center items-center gap-3">
           {slice.primary.buttons.map((button) => {
             return <Button href={asLink(button.link)}>{button.text}</Button>
           })}

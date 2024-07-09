@@ -1,7 +1,40 @@
+"use client"
+import { motion } from "framer-motion"
+
 import Link from "next/link"
 
 import { Container } from "./Container"
 import Button from "./Button"
+
+const NavLink = ({ href, text }) => {
+  const underlineMotion = {
+    rest: { scaleX: 0, duration: 0.8, type: "tween", ease: [0.5, 0, 0.1, 1] },
+    hover: {
+      scaleX: 1,
+      transition: {
+        duration: 0.8,
+        type: "tween",
+        ease: [0.5, 0, 0.1, 1],
+      },
+    },
+  }
+
+  return (
+    <motion.a
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      className="text-al-medium font-semibold relative"
+      href={href}
+    >
+      <span>{text}</span>
+      <motion.div
+        variants={underlineMotion}
+        className="absolute -bottom-1 left-0 h-[2px] rounded-full w-full origin-bottom-left bg-forest"
+      />
+    </motion.a>
+  )
+}
 
 export const Header = () => {
   return (
@@ -13,9 +46,8 @@ export const Header = () => {
           </Link>
         </div>
         <div className="flex items-center gap-6">
-          <Link className="text-medium font-semibold" href="/resources/">
-            Resources
-          </Link>
+          <NavLink href="/resources/" text="Resources" />
+
           <Button href="/contact">Contact us</Button>
         </div>
       </nav>

@@ -35,11 +35,11 @@ const ContactForm = ({ slice }) => {
       data-slice-variation={slice.variation}
     >
       <Orbit />
-      <Container size="lg" className="my-20 relative z-20">
+      <Container size="lg" className="mt-12 md:my-20 relative z-20">
         <div className="p-8 md:p-12 bg-latte rounded-2xl">
           <div className="text-center">
-            <span className="text-eyebrow text-brown-sugar">{slice.primary.eyebrow}</span>
-            <div className="text-4xl mt-5">
+            <span className="text-al-eyebrow text-brown-sugar">{slice.primary.eyebrow}</span>
+            <div className="text-al-4xl mt-5">
               <PrismicRichText field={slice.primary.title} />
             </div>
             <div className="mt-8">
@@ -85,8 +85,9 @@ const ContactForm = ({ slice }) => {
               name="message"
               placeholder="Message"
               type="text"
-              className="rounded-[10px] placeholder:text-[#B6B6B6] text-lg"
+              className="rounded-[10px] placeholder:text-[#B6B6B6] text-lg min-h-[150px]"
             />
+
             <Button type="submit">Submit</Button>
           </form>
         </div>

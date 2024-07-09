@@ -54,23 +54,23 @@ export default async function Index() {
     <div className="bg-latte relative">
       <Orbit />
       <Layout settings={settings}>
-        <Container className="mt-20">
+        <Container className="mt-12 md:mt-20">
           <div className="relative">
             <div className="relative z-20">
-              <h1 className="text-4xl  mb-8">Resources</h1>
-              <p className="text-medium">
+              <h1 className="text-al-4xl  mb-8">Resources</h1>
+              <p className="text-al-medium">
                 Explore the latest insights and innovations in retail and loyalty.
               </p>
               {/* TODO subscribe */}
             </div>
           </div>
-          <div className="flex justify-end mt-8 relative z-20">
+          <div className="flex md:justify-end mt-8 relative z-20">
             <div>
-              <h2 className="text-eyebrow-small text-gray mb-4">Explore topics</h2>
+              <h2 className="text-al-eyebrow-small text-gray mb-4">Explore topics</h2>
               <div className="flex items-center gap-2.5">
                 {categories.map((item) => {
                   return (
-                    <button className="bg-latte text-eyebrow-small hover:text-latte hover:bg-emerald duration-150 rounded-full px-4 py-2.5 text-sm uppercase text-emerald border border-emerald font-semibold">
+                    <button className="bg-latte text-al-eyebrow-small hover:text-latte hover:bg-emerald duration-150 rounded-full px-4 py-2.5 text-sm uppercase text-emerald border border-emerald font-semibold">
                       {item.uid}
                     </button>
                   )
@@ -78,7 +78,7 @@ export default async function Index() {
               </div>
             </div>
           </div>
-          <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10 mb-40">
+          <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10 mb-12 md:mb-40">
             {articles.map((article) => (
               <Article key={article.id} article={article} />
             ))}

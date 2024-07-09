@@ -48,13 +48,13 @@ const Circles = () => {
 const CtaSection = ({ slice }) => {
   return (
     <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-      <div className="bg-emerald relative overflow-hidden py-44">
+      <div className="bg-emerald relative overflow-hidden py-20 md:py-44">
         <div className="absolute left-0 top-0 z-10">
           <Circles />
         </div>
-        <div className="z-20 relative text-white max-w-4xl ml-auto">
-          <span className="text-large">{slice.primary.eyebrow}</span>
-          <h2 className="text-3xl mt-8">{asText(slice.primary.title)}</h2>
+        <div className="z-20 relative text-white max-w-4xl ml-auto px-6 sm:px-7 lg:px-8">
+          <span className="text-al-large">{slice.primary.eyebrow}</span>
+          <h2 className="text-al-3xl mt-8">{asText(slice.primary.title)}</h2>
           <div className="mt-8 flex items-center gap-3">
             {slice.primary.buttons.map((button) => {
               return (
