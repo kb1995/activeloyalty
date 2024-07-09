@@ -5,8 +5,7 @@ import { createClient } from "@/prismicio"
 import { components } from "@/slices"
 import { Layout } from "@/components/Layout"
 import { Container } from "@/components/Container"
-import { Heading } from "@/components/Heading"
-import Subscribe from "./Subscribe"
+import Subscribe from "../Subscribe"
 import Badge from "@/components/Badge"
 import { Article } from "@/components/Article"
 
@@ -36,6 +35,59 @@ export async function generateMetadata({ params }) {
   }
 }
 
+const Orbit = () => {
+  return (
+    <svg
+      className="absolute bottom-[-300px] -left-6"
+      width="467"
+      height="467"
+      viewBox="0 0 467 467"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="233.499"
+        cy="239.755"
+        r="150.665"
+        stroke="#4D887D"
+        stroke-opacity="0.5"
+        stroke-width="10"
+      />
+      <circle
+        cx="233.497"
+        cy="239.755"
+        r="189.581"
+        stroke="#4D887D"
+        stroke-opacity="0.5"
+        stroke-width="10"
+      />
+      <circle
+        cx="233.497"
+        cy="233.497"
+        r="228.497"
+        stroke="#4D887D"
+        stroke-opacity="0.5"
+        stroke-width="10"
+      />
+      <circle
+        cx="233.497"
+        cy="239.755"
+        r="72.8327"
+        stroke="#4D887D"
+        stroke-opacity="0.5"
+        stroke-width="10"
+      />
+      <circle
+        cx="233.497"
+        cy="239.755"
+        r="111.749"
+        stroke="#4D887D"
+        stroke-opacity="0.5"
+        stroke-width="10"
+      />
+    </svg>
+  )
+}
 export default async function Page({ params }) {
   const client = createClient()
 
@@ -76,13 +128,16 @@ export default async function Page({ params }) {
             <div className="flex-1">
               <SliceZone slices={article.data.slices} components={components} />
             </div>
-            <div className="text-white bg-emerald px-6 py-14 w-full md:w-[400px] rounded-[5px] sticky top-4">
-              <h2 className="text-al-xl">Receive news and updates</h2>
-              <p className="text-al-medium mt-6">
-                Subscribe to our newsletter to be the first in the know about industry news and
-                events.{" "}
-              </p>
-              <Subscribe />
+            <div className="sticky top-4">
+              <div className="text-white pb-44 overflow-hidden bg-emerald px-6 py-14 w-full md:w-[400px] rounded-[5px] relative">
+                <Orbit />
+                <h2 className="text-al-xl">Receive news and updates</h2>
+                <p className="text-al-medium mt-6">
+                  Subscribe to our newsletter to be the first in the know about industry news and
+                  events.{" "}
+                </p>
+                <Subscribe />
+              </div>
             </div>
           </div>
         </Container>

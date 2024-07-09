@@ -5,6 +5,7 @@ import { Layout } from "@/components/Layout"
 import { Container } from "@/components/Container"
 import { Article } from "@/components/Article"
 import Badge from "@/components/Badge"
+import Subscribe from "./Subscribe"
 
 export async function generateMetadata() {
   const client = createClient()
@@ -61,7 +62,11 @@ export default async function Index() {
               <p className="text-al-medium">
                 Explore the latest insights and innovations in retail and loyalty.
               </p>
-              {/* TODO subscribe */}
+              <Subscribe
+                className="mt-10 flex items-end gap-6 max-w-md"
+                title="Subscribe for updates"
+                color="green"
+              />
             </div>
           </div>
           <div className="flex md:justify-end mt-8 relative z-20">

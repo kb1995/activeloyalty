@@ -24,10 +24,10 @@ const NavLink = ({ href, text }) => {
       initial="rest"
       whileHover="hover"
       animate="rest"
-      className="text-al-medium font-semibold relative"
+      className="text-al-medium relative"
       href={href}
     >
-      <span>{text}</span>
+      <span className="font-semibold">{text}</span>
       <motion.div
         variants={underlineMotion}
         className="absolute -bottom-1 left-0 h-[2px] rounded-full w-full origin-bottom-left bg-forest"
@@ -38,7 +38,7 @@ const NavLink = ({ href, text }) => {
 
 export const Header = () => {
   return (
-    <Container as="header" className="relative z-10">
+    <Container as="header" className="relative z-20">
       <nav className="flex items-center py-10 justify-between">
         <div>
           <Link href="/">
