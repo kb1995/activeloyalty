@@ -9,7 +9,6 @@ export function Article({ article }) {
       <article className="flex flex-col border border-gray-light overflow-hidden rounded-md items-start justify-between">
         <div className="relative w-full">
           <img alt="" src={article.data.image.url} className="aspect-[16/9] w-full object-cover" />
-          <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
         </div>
         <div className="bg-white w-full p-[30px]">
           <div className="flex items-center gap-x-4 text-xs">

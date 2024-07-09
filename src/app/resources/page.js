@@ -18,7 +18,7 @@ export async function generateMetadata() {
 const Orbit = () => {
   return (
     <svg
-      className="absolute z-10 right-16 -top-4"
+      className="absolute z-10 right-16 top-0"
       width="717"
       height="585"
       viewBox="0 0 717 585"

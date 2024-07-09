@@ -11,8 +11,8 @@ import cn from "classnames"
 const Cards = ({ slice }) => {
   return (
     <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-      <Container className="my-16 md:my-24">
-        <h2 className="text-al-3xl text-center">{asText(slice.primary.title)}</h2>
+      <Container className="relative z-20 my-16 md:my-24">
+        <h2 className="text-al-2xl text-center mx-auto max-w-4xl">{asText(slice.primary.title)}</h2>
         <div className="grid grid-cols-1 gap-20 mt-8 md:mt-14">
           {slice.primary.cards.map((card, idx) => {
             return (
