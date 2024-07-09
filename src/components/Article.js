@@ -21,10 +21,8 @@ export function Article({ article }) {
             </div> */}
           </div>
           <div className="group relative">
-            <h3 className="mt-6 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-              {article.data.title}
-            </h3>
-            <p className="mt-4 line-clamp-3 text-sm leading-6 text-gray">{article.data.subtitle}</p>
+            <h3 className="text-al-large">{article.data.title}</h3>
+            <p className="mt-4 line-clamp-3 text-gray">{article.data.subtitle}</p>
             <p className="flex items-center gap-2 text-gray text-sm mt-10">
               <span>Read more</span>{" "}
               <svg
