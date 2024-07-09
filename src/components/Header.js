@@ -42,7 +42,10 @@ export const Header = () => {
       <nav className="flex items-center py-10 justify-between">
         <div>
           <Link href="/">
-            <img className="h-[45px] w-auto" src="/logo.png" />
+            <img
+              className="duration-500 ease-custom hover:scale-95 hover:opacity-90 h-[45px] w-auto"
+              src="/logo.png"
+            />
           </Link>
         </div>
         <div className="flex items-center gap-6">

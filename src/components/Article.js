@@ -1,25 +1,28 @@
 import { PrismicNextLink } from "@prismicio/next"
-import * as prismic from "@prismicio/client"
+import formatDate from "@/lib/formatDate"
+import Badge from "./Badge"
 
 export function Article({ article }) {
-  const date = prismic.asDate(article.data.published_date || article.first_publication_date)
+  const date = article.data.published_date || article.first_publication_date
 
   return (
     <PrismicNextLink document={article}>
-      <article className="flex flex-col border border-gray-light overflow-hidden rounded-md items-start justify-between">
+      <article className="flex hover:-translate-y-1 duration-150 flex-col border border-gray-light overflow-hidden rounded-md items-start justify-between">
         <div className="relative w-full">
           <img alt="" src={article.data.image.url} className="aspect-[16/9] w-full object-cover" />
         </div>
         <div className="bg-white w-full p-[30px]">
           <div className="flex items-center gap-x-4 text-xs">
-            {/* <time dateTime={date} className="text-gray-500">
-              {date}
-            </time> */}
-            {/* <div className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-              Category
-            </div> */}
+            <div className="flex items-center gap-2.5">
+              {article.data.categories.map((item) => {
+                return <Badge>{item.category.uid}</Badge>
+              })}
+            </div>
+            <time dateTime={formatDate(date)} className="text-gray text-sm font-medium">
+              {formatDate(date)}
+            </time>
           </div>
-          <div className="group relative">
+          <div className="mt-6 group relative">
             <h3 className="text-al-large">{article.data.title}</h3>
             <p className="mt-4 line-clamp-3 text-gray">{article.data.subtitle}</p>
             <p className="flex items-center gap-2 text-gray text-sm mt-10">

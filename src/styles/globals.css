@@ -11,7 +11,7 @@
 }
 
 .text-al-medium {
-  @apply text-[18px] leading-[22.5px] font-normal;
+  @apply text-[18px] leading-[22px] font-normal;
 }
 
 .text-al-large {

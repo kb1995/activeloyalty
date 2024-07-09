@@ -18,7 +18,7 @@ module.exports = {
       //
       neutral: "#FAFAFA",
       forest: { DEFAULT: "#4D887D", dark: "#2F5E53", pale: "#A3C1BB" },
-      latte: "#F1E9D0",
+      latte: { DEFAULT: "#F1E9D0", pale: "#F1EDE0" },
       "brown-sugar": "#D89463",
       emerald: "#294740",
       gray: {
@@ -26,7 +26,11 @@ module.exports = {
         DEFAULT: "#595959",
       },
     },
-    extend: {},
+    extend: {
+      transitionTimingFunction: {
+        custom: "cubic-bezier(.1,.6,.4,1)",
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/aspect-ratio"),

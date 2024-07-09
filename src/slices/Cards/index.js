@@ -19,7 +19,7 @@ const Cards = ({ slice }) => {
               <div
                 style={{ top: (idx + 1) * 36 }}
                 className={cn(
-                  "grid sticky items-center md:grid-cols-2 px-8 py-8 md:px-12 md:py-24 rounded-2xl gap-8 md:gap-44",
+                  "grid sticky items-center md:grid-cols-2 px-8 py-8 md:px-12 md:py-24 rounded-2xl gap-8 md:gap-32",
                   {
                     "bg-latte text-black": card.theme === "Beige",
                     "bg-forest-pale text-black": card.theme === "Light Green",
@@ -29,10 +29,10 @@ const Cards = ({ slice }) => {
                 )}
               >
                 <img className="order-2 md:order-1 rounded-2xl shadow-xl" src={card.image.url} />
-                <div className="md:mr-12 order-1 md:order-2">
+                <div className="order-1 md:order-2">
                   <span className="text-al-eyebrow">{card.eyebrow}</span>
                   <h3 className="text-al-2xl mt-3 md:mt-5">{asText(card.title)}</h3>
-                  <div className="mt-4 md:mt-9 text-al-medium">
+                  <div className="mt-4 md:mt-9 text-al-medium md:max-w-[85%]">
                     <PrismicRichText field={card.subtitle} />
                   </div>
                 </div>

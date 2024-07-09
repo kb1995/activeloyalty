@@ -52,7 +52,7 @@ export default async function Index() {
   const settings = await client.getSingle("settings")
 
   return (
-    <div className="bg-latte relative">
+    <div className="bg-latte-pale relative">
       <Orbit />
       <Layout settings={settings}>
         <Container className="mt-12 md:mt-20">
@@ -72,10 +72,10 @@ export default async function Index() {
           <div className="flex md:justify-end mt-8 relative z-20">
             <div>
               <h2 className="text-al-eyebrow-small text-gray mb-4">Explore topics</h2>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 relative z-20">
                 {categories.map((item) => {
                   return (
-                    <button className="bg-latte text-al-eyebrow-small hover:text-latte hover:bg-emerald duration-150 rounded-full px-4 py-2.5 text-sm uppercase text-emerald border border-emerald font-semibold">
+                    <button className="bg-latte-pale text-al-eyebrow-small hover:text-latte hover:bg-emerald duration-150 rounded-full px-4 py-2 uppercase text-emerald border border-emerald font-semibold">
                       {item.uid}
                     </button>
                   )

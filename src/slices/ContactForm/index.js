@@ -86,7 +86,7 @@ const ContactForm = ({ slice }) => {
     >
       <Orbit />
       <Container size="lg" className="mt-12 md:my-20 relative z-20">
-        <div className="p-8 md:p-12 bg-latte rounded-2xl">
+        <div className="p-8 md:p-12 bg-latte-pale rounded-2xl">
           <div className="text-center">
             <span className="text-al-eyebrow text-brown-sugar">{slice.primary.eyebrow}</span>
             <div className="text-al-4xl mt-5">
