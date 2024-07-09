@@ -8,7 +8,7 @@ import { PrismicRichText } from "@prismicio/react"
 const RichText = ({ slice }) => {
   return (
     <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-      <div className="prose">
+      <div className="prose max-w-none prose-img:w-full">
         <PrismicRichText field={slice.primary.text} />
       </div>
     </section>

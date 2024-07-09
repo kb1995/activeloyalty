@@ -21,6 +21,10 @@ module.exports = {
       latte: "#F1E9D0",
       "brown-sugar": "#D89463",
       emerald: "#294740",
+      gray: {
+        light: "#D9D9D9",
+        DEFAULT: "#595959",
+      },
     },
     extend: {},
   },

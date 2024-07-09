@@ -1,40 +1,48 @@
-import { PrismicText } from "@prismicio/react"
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next"
+import { PrismicNextLink } from "@prismicio/next"
 import * as prismic from "@prismicio/client"
 
-import { getExcerpt } from "@/lib/getExcerpt"
-import { findFirstImage } from "@/lib/findFirstImage"
-import { dateFormatter } from "@/lib/dateFormatter"
-
-import { Heading } from "./Heading"
-
 export function Article({ article }) {
-  const featuredImage =
-    (prismic.isFilled.image(article.data.image) && article.data.image) ||
-    findFirstImage(article.data.slices)
   const date = prismic.asDate(article.data.published_date || article.first_publication_date)
-  const excerpt = article.data.subtitle
 
   return (
-    <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
-      <PrismicNextLink document={article} tabIndex="-1">
-        <div className="aspect-h-3 aspect-w-4 relative bg-gray-100">
-          {prismic.isFilled.image(featuredImage) && (
-            <PrismicNextImage field={featuredImage} fill={true} className="object-cover" />
-          )}
+    <PrismicNextLink document={article}>
+      <article className="flex flex-col border border-gray-light overflow-hidden rounded-md items-start justify-between">
+        <div className="relative w-full">
+          <img alt="" src={article.data.image.url} className="aspect-[16/9] w-full object-cover" />
+          <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
         </div>
-      </PrismicNextLink>
-      <div className="grid grid-cols-1 gap-3 md:col-span-2">
-        <Heading as="h2">
-          <PrismicNextLink document={article}>{article.data.title}</PrismicNextLink>
-        </Heading>
-        <p className="font-serif italic tracking-tighter text-slate-500">
-          {dateFormatter.format(date)}
-        </p>
-        {excerpt && (
-          <p className="font-serif leading-relaxed md:text-lg md:leading-relaxed">{excerpt}</p>
-        )}
-      </div>
-    </li>
+        <div className="bg-white w-full p-[30px]">
+          <div className="flex items-center gap-x-4 text-xs">
+            {/* <time dateTime={date} className="text-gray-500">
+              {date}
+            </time> */}
+            {/* <div className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+              Category
+            </div> */}
+          </div>
+          <div className="group relative">
+            <h3 className="mt-6 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+              {article.data.title}
+            </h3>
+            <p className="mt-4 line-clamp-3 text-sm leading-6 text-gray">{article.data.subtitle}</p>
+            <p className="flex items-center gap-2 text-gray text-sm mt-10">
+              <span>Read more</span>{" "}
+              <svg
+                width="11"
+                height="10"
+                viewBox="0 0 11 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.000270844 4.61538L9.42335 4.61538L5.38489 0.576923L5.89258 0L10.8926 5L5.89258 10L5.38489 9.42308L9.42335 5.38462L0.000270844 5.38462V4.61538Z"
+                  fill="#4D887D"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </article>
+    </PrismicNextLink>
   )
 }

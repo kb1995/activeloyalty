@@ -1,34 +1,20 @@
 import Link from "next/link"
 import * as prismic from "@prismicio/client"
-import { PrismicNextLink } from "@prismicio/next"
-import { PrismicText, SliceZone } from "@prismicio/react"
-
+import { SliceZone } from "@prismicio/react"
 import { createClient } from "@/prismicio"
 import { components } from "@/slices"
 import { Layout } from "@/components/Layout"
 import { Container } from "@/components/Container"
 import { Heading } from "@/components/Heading"
+import Subscribe from "./Subscribe"
+import Badge from "@/components/Badge"
+import { Article } from "@/components/Article"
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   day: "numeric",
   year: "numeric",
 })
-
-function LatestArticle({ article }) {
-  const date = prismic.asDate(article.data.published_date || article.first_publication_date)
-
-  return (
-    <li>
-      <h1 className="mb-3 text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
-        <PrismicNextLink document={article}>{article.data.title}</PrismicNextLink>
-      </h1>
-      <p className="font-serif italic tracking-tighter text-slate-500">
-        {dateFormatter.format(date)}
-      </p>
-    </li>
-  )
-}
 
 export async function generateMetadata({ params }) {
   const client = createClient()
@@ -54,6 +40,7 @@ export default async function Page({ params }) {
   const client = createClient()
 
   const article = await client.getByUID("article", params.uid).catch(() => notFound())
+
   const latestArticles = await client.getAllByType("article", {
     limit: 3,
     orderings: [
@@ -70,11 +57,13 @@ export default async function Page({ params }) {
     <Layout withHeaderDivider={false} withProfile={false} settings={settings}>
       <article className="mt-28">
         <Container>
-          <div className="mb-8">
-            {/* TODO categories */}
-            <p className="font-serif italic tracking-tighter text-slate-500">
-              {dateFormatter.format(date)}
-            </p>
+          <div className="mb-8 flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5">
+              {article.data.categories.map((item) => {
+                return <Badge>{item.category.uid}</Badge>
+              })}
+            </div>
+            <p className="text-sm font-medium text-gray">{dateFormatter.format(date)}</p>
           </div>
           <h1 className="text-2xl max-w-4xl">{article.data.title}</h1>
           <img
@@ -87,26 +76,45 @@ export default async function Page({ params }) {
             <div className="flex-1">
               <SliceZone slices={article.data.slices} components={components} />
             </div>
-            <div className="text-white bg-emerald p-8 w-[400px]">
-              <h2>Receive news and updates</h2>
-              <p>
+            <div className="text-white bg-emerald px-6 py-14 w-[400px] rounded-[5px] sticky top-4">
+              <h2 className="text-xl">Receive news and updates</h2>
+              <p className="text-medium mt-6">
                 Subscribe to our newsletter to be the first in the know about industry news and
                 events.{" "}
               </p>
+              <Subscribe />
             </div>
           </div>
         </Container>
       </article>
       {latestArticles.length > 0 && (
-        <Container>
+        <Container className="mt-40 mb-20">
           <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
             <div className="w-full">
-              <Heading size="2xl" className="mb-10">
-                Latest articles
-              </Heading>
-              <ul className="grid grid-cols-1 gap-12">
+              <div className="flex mb-14 justify-between items-center">
+                <h2 className="text-2xl">Related resources</h2>
+                <Link
+                  href="/resources/"
+                  className="flex items-center gap-2 text-gray text-medium font-semibold"
+                >
+                  <span>Read more</span>{" "}
+                  <svg
+                    width="11"
+                    height="10"
+                    viewBox="0 0 11 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.000270844 4.61538L9.42335 4.61538L5.38489 0.576923L5.89258 0L10.8926 5L5.89258 10L5.38489 9.42308L9.42335 5.38462L0.000270844 5.38462V4.61538Z"
+                      fill="#4D887D"
+                    />
+                  </svg>
+                </Link>
+              </div>
+              <ul className="grid grid-cols-3 gap-12">
                 {latestArticles.map((article) => (
-                  <LatestArticle key={article.id} article={article} />
+                  <Article article={article} />
                 ))}
               </ul>
             </div>

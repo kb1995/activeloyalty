@@ -5,8 +5,8 @@ import Button from "./Button"
 
 export const Header = () => {
   return (
-    <Container as="header">
-      <nav className="flex items-center my-10 justify-between">
+    <Container as="header" className="relative z-10">
+      <nav className="flex items-center py-10 justify-between">
         <div>
           <Link href="/">
             <img className="h-[45px] w-auto" src="/logo.png" />

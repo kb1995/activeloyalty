@@ -1,6 +1,6 @@
 {
   "libraries": ["./src/slices"],
   "adapter": "@slicemachine/adapter-next",
-  "repositoryName": "active-loyalty-test",
+  "repositoryName": "activeloyalty",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }
