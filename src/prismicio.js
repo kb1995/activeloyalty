@@ -15,11 +15,11 @@ export const repositoryName = process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || con
 const routes = [
   {
     type: "article",
-    path: "/resources/:uid",
+    path: "/resources/:uid/",
   },
   {
     type: "page",
-    path: "/:uid",
+    path: "/:uid/",
   },
 ]
 

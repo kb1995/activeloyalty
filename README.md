@@ -2,9 +2,10 @@
 
 ## todo
 
-[] sitemap.xml
-[] robots.txt
-[] forward slash
+[] 404 page
+[x] sitemap.xml
+[x] robots.txt
+[x] forward slash
 [] og image
 [] favicon
 [] resource filter

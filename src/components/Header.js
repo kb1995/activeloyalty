@@ -48,7 +48,7 @@ export const Header = () => {
         <div className="flex items-center gap-6">
           <NavLink href="/resources/" text="Resources" />
 
-          <Button href="/contact">Contact us</Button>
+          <Button href="/contact/">Contact us</Button>
         </div>
       </nav>
     </Container>
