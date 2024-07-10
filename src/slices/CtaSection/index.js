@@ -54,8 +54,8 @@ const CtaSection = ({ slice }) => {
         </div>
         <div className="z-20 relative text-white max-w-4xl ml-auto px-6 sm:px-7 lg:px-8">
           <span className="text-al-large">{slice.primary.eyebrow}</span>
-          <h2 className="text-al-3xl mt-8">{asText(slice.primary.title)}</h2>
-          <div className="mt-8 flex items-center gap-3">
+          <h2 className="text-al-3xl mt-4">{asText(slice.primary.title)}</h2>
+          <div className="mt-6 flex items-center gap-3">
             {slice.primary.buttons.map((button) => {
               return (
                 <Button color="orange" href={asLink(button.link)}>
