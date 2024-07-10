@@ -23,7 +23,7 @@ const Hero = ({ slice }) => {
         src="/hero.png"
       />
 
-      <Container className="text-center relative z-20 mt-12 md:mt-24 lg:mb-[300px]" size="lg">
+      <Container className="text-center relative z-20 mt-12 md:mt-24 lg:mb-[100px]" size="lg">
         <h1 className="text-al-4xl">{asText(slice.primary.title)}</h1>
         <p className="text-al-large mt-4 md:mt-10 max-w-2xl mx-auto">
           {asText(slice.primary.subtitle)}

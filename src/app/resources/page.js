@@ -5,10 +5,8 @@ import Subscribe from "./Subscribe"
 import ContentGrid from "./ContentGrid"
 
 export async function generateMetadata() {
-  const client = createClient()
-
   return {
-    title: "Resources",
+    title: "Resources | Active Loyalty",
   }
 }
 
@@ -52,15 +50,15 @@ export default async function Index() {
     <div className="bg-latte-pale relative">
       <Orbit />
       <Layout settings={settings}>
-        <Container className="mt-12 md:mt-20">
+        <Container className="mt-12 md:mt-24">
           <div className="relative">
             <div className="relative z-20">
-              <h1 className="text-al-4xl  mb-8">Resources</h1>
+              <h1 className="text-al-4xl mb-6">Resources</h1>
               <p className="text-al-medium">
                 Explore the latest insights and innovations in retail and loyalty.
               </p>
               <Subscribe
-                className="mt-10 flex items-end gap-6 max-w-md"
+                className="mt-10 flex items-end gap-6 max-w-xl"
                 title="Subscribe for updates"
                 color="green"
               />

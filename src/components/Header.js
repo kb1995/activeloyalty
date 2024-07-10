@@ -39,7 +39,7 @@ const NavLink = ({ href, text }) => {
 export const Header = () => {
   return (
     <Container as="header" className="relative z-20">
-      <nav className="flex items-center py-10 justify-between">
+      <nav className="flex items-center pt-10 justify-between">
         <div>
           <Link href="/">
             <img

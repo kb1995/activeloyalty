@@ -7,7 +7,7 @@ export function Article({ article }) {
 
   return (
     <PrismicNextLink document={article}>
-      <article className="flex hover:-translate-y-1 duration-150 flex-col border border-gray-light overflow-hidden rounded-md items-start justify-between">
+      <article className="group flex hover:-translate-y-1 relative z-20 duration-150 flex-col border border-gray-light overflow-hidden rounded-md items-start justify-between">
         <div className="relative w-full">
           <img alt="" src={article.data.image.url} className="aspect-[16/9] w-full object-cover" />
         </div>
@@ -25,9 +25,10 @@ export function Article({ article }) {
           <div className="mt-6 group relative">
             <h3 className="text-al-large">{article.data.title}</h3>
             <p className="mt-4 line-clamp-3 text-gray">{article.data.subtitle}</p>
-            <p className="flex items-center gap-2 text-gray text-sm mt-10">
+            <p className="flex items-center gap-2 text-gray font-semibold text-sm mt-10">
               <span>Read more</span>{" "}
               <svg
+                className="group-hover:translate-x-1 duration-150"
                 width="11"
                 height="10"
                 viewBox="0 0 11 10"

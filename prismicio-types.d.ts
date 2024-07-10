@@ -172,21 +172,7 @@ export type ArticleDocument<Lang extends string = string> = prismic.PrismicDocum
   Lang
 >
 
-/**
- * Content for Article Category documents
- */
-interface ArticleCategoryDocumentData {
-  /**
-   * Name field in *Article Category*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_category.name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField
-}
+interface ArticleCategoryDocumentData {}
 
 /**
  * Article Category document from Prismic

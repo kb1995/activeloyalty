@@ -110,7 +110,7 @@ const ContactForm = ({ slice }) => {
                 name="first_name"
                 placeholder="First name"
                 type="text"
-                className="rounded-[10px] placeholder:text-[#B6B6B6] text-lg"
+                className="rounded-[10px] border border-forest-dark placeholder:text-[#B6B6B6] text-lg"
               />
               <input
                 required
@@ -124,7 +124,7 @@ const ContactForm = ({ slice }) => {
                 name="last_name"
                 placeholder="Last name"
                 type="text"
-                className="rounded-[10px] placeholder:text-[#B6B6B6] text-lg"
+                className="rounded-[10px] border border-forest-dark placeholder:text-[#B6B6B6] text-lg"
               />
             </div>
             <input
@@ -139,7 +139,7 @@ const ContactForm = ({ slice }) => {
               name="company"
               placeholder="Company"
               type="text"
-              className="rounded-[10px] placeholder:text-[#B6B6B6] text-lg"
+              className="rounded-[10px] border border-forest-dark placeholder:text-[#B6B6B6] text-lg"
             />
             <div className="grid md:grid-cols-2 gap-6">
               <input
@@ -154,7 +154,7 @@ const ContactForm = ({ slice }) => {
                 name="email"
                 placeholder="Email"
                 type="text"
-                className="rounded-[10px] placeholder:text-[#B6B6B6] text-lg"
+                className="rounded-[10px] border border-forest-dark placeholder:text-[#B6B6B6] text-lg"
               />
               <input
                 value={formData.phone}
@@ -167,7 +167,7 @@ const ContactForm = ({ slice }) => {
                 name="phone"
                 placeholder="Telephone"
                 type="text"
-                className="rounded-[10px] placeholder:text-[#B6B6B6] text-lg"
+                className="rounded-[10px] border border-forest-dark placeholder:text-[#B6B6B6] text-lg"
               />
             </div>
             <textarea
@@ -181,10 +181,11 @@ const ContactForm = ({ slice }) => {
               name="message"
               placeholder="Message"
               type="text"
-              className="rounded-[10px] placeholder:text-[#B6B6B6] text-lg min-h-[150px]"
+              className="rounded-[10px] border border-forest-dark placeholder:text-[#B6B6B6] text-lg min-h-[150px]"
             />
-
-            <Button type="submit">Submit</Button>
+            <div className="mx-auto max-w-[100px]">
+              <Button type="submit">Submit</Button>
+            </div>
           </form>
         </div>
       </Container>
