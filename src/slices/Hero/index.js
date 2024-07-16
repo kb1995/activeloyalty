@@ -19,7 +19,7 @@ const Hero = ({ slice }) => {
         width="1266"
         height="1200"
         priority
-        className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-[-450px] z-10"
+        className="hidden ml-[-1.94vw] lg:block absolute left-1/2 -translate-x-1/2 top-[-450px] z-10"
         src="/hero.png"
       />
 

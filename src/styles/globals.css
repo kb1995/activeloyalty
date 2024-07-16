@@ -31,5 +31,5 @@
 }
 
 .text-al-4xl {
-  @apply text-5xl md:text-[72px] md:leading-[64px] font-semibold;
+  @apply text-5xl md:text-[72px] md:leading-[64px] font-bold;
 }
