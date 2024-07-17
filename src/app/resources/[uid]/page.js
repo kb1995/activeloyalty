@@ -113,7 +113,9 @@ export default async function Page({ params }) {
           <div className="mb-8 flex items-center gap-2.5">
             <div className="flex items-center gap-2.5">
               {article.data.categories.map((item) => {
-                return <Badge>{item.category.uid}</Badge>
+                if (item.category.uid) {
+                  return <Badge>{item.category.uid}</Badge>
+                } else return null
               })}
             </div>
             <p className="text-sm font-medium text-gray">{formatDate(date)}</p>

@@ -7,6 +7,7 @@ const Subscribe = ({
   title = "Email address",
   color = "orange",
   className = "mx-auto mt-10 flex flex-col gap-6 items-start max-w-md",
+  textClassName = "text-white text-xs mt-2",
 }) => {
   const [success, setSuccess] = useState(false)
 
@@ -45,7 +46,7 @@ const Subscribe = ({
           className="w-full rounded-md text-black border-0 bg-white px-3.5 py-2 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
           placeholder="Enter your email"
         />
-        {success ? <p className="text-white text-xs mt-2">Thank you for subscribing!</p> : null}
+        {success ? <p className={textClassName}>Thank you for subscribing!</p> : null}
       </div>
       <div>
         <Button type="submit" color={color}>

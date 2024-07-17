@@ -15,7 +15,9 @@ export function Article({ article }) {
           <div className="flex items-center gap-x-4 text-xs">
             <div className="flex items-center gap-2.5">
               {article.data.categories.map((item) => {
-                return <Badge>{item.category.uid}</Badge>
+                if (item.category.uid) {
+                  return <Badge>{item.category.uid}</Badge>
+                } else return null
               })}
             </div>
             <time dateTime={formatDate(date)} className="text-gray text-sm font-medium">

@@ -58,7 +58,8 @@ export default async function Index() {
                 Explore the latest insights and innovations in retail and loyalty.
               </p>
               <Subscribe
-                className="mt-10 flex items-end gap-6 max-w-xl"
+                className="mt-10 relative flex items-end gap-6 max-w-xl"
+                textClassName="absolute -bottom-6 font-medium text-black text-xs"
                 title="Subscribe for updates"
                 color="green"
               />
