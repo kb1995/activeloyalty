@@ -43,7 +43,7 @@ export const Header = () => {
         <div>
           <Link href="/">
             <img
-              className="duration-500 ease-custom hover:scale-95 hover:opacity-90 h-[45px] w-auto"
+              className="duration-500 ease-custom hover:scale-95 hover:opacity-90 h-[55px] w-auto"
               src="/logo.png"
             />
           </Link>
