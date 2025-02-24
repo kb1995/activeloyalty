@@ -1,7 +1,7 @@
 import { createClient } from "../prismicio"
 
 export default async function sitemap() {
-  const origin = "https://www.activeloyalty.io"
+  const origin = "https://www.activeloyalty.com"
 
   const client = createClient()
   const pages = await client.dangerouslyGetAll()
