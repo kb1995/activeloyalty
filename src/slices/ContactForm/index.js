@@ -47,7 +47,6 @@ const ContactForm = ({ slice }) => {
     message: "",
   })
 
-  // TODO handle loading/success message
   const handleSubmit = async (e) => {
     e.preventDefault()
     setSubmitting(true)
